@@ -1,6 +1,12 @@
-<% @items.each do |item| %>
-  <h2><%= link_to item.title, item %></h2>
-  <p><%= item.description %></p>
-<% end %>
+<br>
+<br>
+<div class="col-md-10 col-md-offset-1">
+  <% @items.each do |item| %>
+    <h2><%= link_to item.title, item %></h2>
+    <p><%= item.description %></p>
+  <% end %>
+
 
 <%= link_to "New Item", new_item_path %>
+
+</div>
