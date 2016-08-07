@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-
-  devise_for :users
-  resources :items do
-    member do
-      patch :complete
-    end
+  authenticate :user do
+    resources :items, only: [:show, :new, :create, :edit, :update, :destroy]
   end
-  root 'items#index'
-end
+  
+    devise_for :users
+    resources :items do
+      member do
+        patch :complete
+      end
+    end
+    root 'items#index'
+  end
