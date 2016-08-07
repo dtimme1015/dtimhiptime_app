@@ -1,7 +1,8 @@
-
-<div class="col-md-10 col-md-offset-1">
+<% if user_signed_in? %>
   <% @items.each do |item| %>
     <h2><%= link_to item.title, item %></h2>
     <p><%= item.description %></p>
   <% end %>
-</div>
+<% else %>
+ <%= render 'welcome_page' %>
+<% end %>
